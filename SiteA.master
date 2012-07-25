@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteA.master.cs" Inherits="SiteMaster"
+    EnableTheming="true" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="prilety">
+    <form runat="server">
+    <div class="page">
+        <div class="header prilety">
+            <div class="title">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center">
+                            <asp:Image ID="ImageAir" runat="server" Height="60px" Width="60px" />
+                        </td>
+                        <td align="left" width="*">
+                            <h1><%= this.Page.Title %></h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clear hideSkiplinkA">
+                <table width="100%" class="formatingtable">
+                    <tr>
+                        <td  class="tablecellleft">
+                            <asp:Menu ID="NavigationMenu" runat="server" CssClass="menuA" EnableViewState="true"
+                                IncludeStyleBlock="False" Orientation="Horizontal" StaticSubMenuIndent="16px">
+                                <Items>
+                                    <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Prilety +/- 60" />
+                                    <asp:MenuItem NavigateUrl="~/Departure60.aspx" Text="Odlety +/- 60" />
+                                    <asp:MenuItem NavigateUrl="~/Arrival.aspx" Text="Prilety" />
+                                    <asp:MenuItem NavigateUrl="~/Departure.aspx" Text="Odlety" />
+                                    <asp:MenuItem NavigateUrl="~/Administrace.aspx" Text="Adminstrace" />
+                                </Items>
+                            </asp:Menu>
+                        </td>
+                        <td class="tablecellright">
+                            <asp:Button ID="btnFind" runat="server" Text="Vyhledej" />&nbsp;<asp:Button ID="btnClear"
+                                runat="server" Text="Vymaz" />&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="clearsmall">
+        </div>
+    </div>
+    <div class="footer">
+        Leonardo Arrival / Departure list © 2012 written by ZdPo
+    </div>
+    </form>
+</body>
+</html>
